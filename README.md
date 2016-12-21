@@ -27,3 +27,9 @@
 
 功能测试
 ----
+
+其他
+----
+
+  $ git submodule add https://github.com/mochajs/mocha.git
+  $ git submodule update --init --recursive
