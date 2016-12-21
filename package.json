@@ -8,7 +8,9 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "mocha -w"
+    "test-w": "mocha -w",
+    "test-sqrt": "mocha test/test.sqrt.*",
+    "istanbul": "istanbul cover _mocha test/test.*"
   },
   "author": "",
   "license": "ISC"
