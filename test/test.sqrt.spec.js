@@ -1,7 +1,9 @@
 // ╰─$ istanbul cover _mocha test/test.sqrt.spec.js
 
 var assert = require('assert');
-var My = require('../src/sqrt.js');
+var src = require('../src');
+var My = src.My;
+// var My = require('../src/sqrt.js');
 // var sim = require('../src/simple.js')
 
 describe("assert sqrt", function() {

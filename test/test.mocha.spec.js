@@ -21,12 +21,12 @@ describe('User', function() {
 
 beforeEach(function() {
   // runs before each test in this block
-  console.log('=====all beforeEach 影响全局=====');
+  console.log('===== all beforeEach 影响全局 =====');
 });
 
 afterEach(function() {
   // runs before each test in this block
-  console.log('=====all afterEach 影响全局=====');
+  console.log('===== all afterEach 影响全局 =====');
 });
 
 describe('hooks', function() {

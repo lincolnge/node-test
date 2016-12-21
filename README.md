@@ -19,7 +19,9 @@
 - 测试驱动开发（TDD）
 - 行为驱动开发（BDD）
 
-代码覆盖率
+异步测试
+
+代码覆盖率（从 jscover 到 istanbul）
 <http://www.ruanyifeng.com/blog/2015/06/istanbul.html>
 
 性能测试(+)
