@@ -1,5 +1,7 @@
 # .PHONY: all test clean
 
+all: test
+
 test: lint
 
 lint:
