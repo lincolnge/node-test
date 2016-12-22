@@ -4,7 +4,7 @@ var assert = require('assert');
 var fs = require('fs');
 var muk = require('muk');
 var isConsole = false;
-isConsole = true;
+// isConsole = true;
 
 /* start debug output */
 var debug = console.log;
