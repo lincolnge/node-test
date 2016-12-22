@@ -42,6 +42,15 @@ travis
   $ git submodule add https://github.com/mochajs/mocha.git
   $ git submodule update --init --recursive
 
+ab Test
+----
+
+  # 说明百度做了防 ab test 的策略
+  $ ab -k -c 2 -n 5 http://www.baidu.com/
+
+  # 猫眼是没有防护的。
+  $ ab -k -c 800 -n 10000 http://www.maoyan.com/
+
 References
 ----
 
