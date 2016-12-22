@@ -24,6 +24,9 @@
 代码覆盖率（从 jscover 到 istanbul）
 <http://www.ruanyifeng.com/blog/2015/06/istanbul.html>
 
+travis
+<https://travis-ci.org/>
+
 性能测试(+)
 ----
 
