@@ -25,7 +25,7 @@ describe("assert sqrt", function() {
       },
       function(err) {
         // console.info('err', err);
-        if ( (err instanceof Error) && /负值没有平方根/.test(err) ) {
+        if ((err instanceof Error) && /负值没有平方根/.test(err)) {
           return true;
         }
       },
