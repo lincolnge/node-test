@@ -1,5 +1,4 @@
 // $ mocha test/test.asyn.spec.js
-// https://segmentfault.com/a/1190000004627859
 
 var assert = require('assert');
 var fs = require('fs');

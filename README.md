@@ -41,3 +41,9 @@ travis
 
   $ git submodule add https://github.com/mochajs/mocha.git
   $ git submodule update --init --recursive
+
+References
+----
+
+- <https://mochajs.org/>
+- <https://segmentfault.com/a/1190000004627859>
