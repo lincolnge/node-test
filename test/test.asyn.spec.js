@@ -2,13 +2,22 @@
 
 var assert = require('assert');
 var fs = require('fs');
-var muk = require('muk')
+var muk = require('muk');
+var isConsole = false;
+isConsole = true;
+
+/* start debug output */
+var debug = console.log;
+if (!isConsole) {
+  debug = function() {};
+}
+/* end debug */
 
 // 测试 fs readFile 是否能正常运行
 describe('Read File, fs.readFile should be ok', function() {
   it('should without error', function(done) {
     fs.readFile('src/index.js', 'utf-8', function (err, data) {
-      console.log('data0-0', data);
+      debug('data0-0', data);
       if (!err) {
         done();
       }
@@ -22,7 +31,7 @@ describe.skip('Set time out', function() {
   });
   it('asyn test', function(done) {
     function done2 () {
-      console.log('done2')
+      debug('done2')
       setTimeout(done, 980);
     }
     setTimeout(done, 1000);
@@ -56,12 +65,12 @@ describe('Read File, mock', function() {
         callback(new Error("mock readFile error"));
       });
     });
-    console.log('check fs.readFile isMocked', muk.isMocked(fs, 'readFile'));
+    debug('check fs.readFile isMocked', muk.isMocked(fs, 'readFile'));
   });
 
   it('should read file error', function(done) {
     fs.readFile('src/index.js', 'utf-8', function (err, data) {
-      console.log('err info', err);
+      debug('err info', err);
       if ((err instanceof Error) && /mock readFile error/.test(err)) {
         done();
       }
@@ -69,22 +78,24 @@ describe('Read File, mock', function() {
   });
 
   afterEach(function() {
+    // Restore all mocked methods after tests.
+    // 取消 mock。
     muk.restore();
 
-    fs.readFile('src/index.js', 'utf-8', function (err, data) {
-      console.log('data x xxxx', data, 'end xxxx');
-    });
+    // fs.readFile('src/index.js', 'utf-8', function (err, data) {
+    //   debug('data x xxxx', data, 'end xxxx');
+    // });
   });
 });
 
 // 测试外面的 fs readFile 是否能正常运行
-describe('Read File, fs.readFile should be ok', function() {
-  it('should without error', function(done) {
-    fs.readFile('src/index.js', 'utf-8', function (err, data) {
-      console.log('data0-1', data);
-      if (!err) {
-        done();
-      }
-    });
-  });
-});
+// describe('Read File, fs.readFile should be ok', function() {
+//   it('should without error', function(done) {
+//     fs.readFile('src/index.js', 'utf-8', function (err, data) {
+//       debug('data0-1', data);
+//       if (!err) {
+//         done();
+//       }
+//     });
+//   });
+// });
