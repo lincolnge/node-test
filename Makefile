@@ -1,11 +1,14 @@
 # .PHONY: all test clean
 
-all: test
+all: test lint
 
-test: lint
+test: mocha-test
+
+mocha-test:
+	./node_modules/mocha/bin/mocha
 
 lint:
-	./node_modules/mocha/bin/mocha
+	@eslint src/ test/
 
 istanbul:
 	istanbul cover _mocha test/test.*

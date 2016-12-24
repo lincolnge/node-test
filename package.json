@@ -6,6 +6,8 @@
   "dependencies": {},
   "devDependencies": {
     "benchmark": "^2.1.2",
+    "chai": "^3.5.0",
+    "eslint": "^3.12.2",
     "mocha": "^3.2.0",
     "mochawesome": "^1.5.4",
     "muk": "^0.5.3",

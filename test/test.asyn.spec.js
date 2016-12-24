@@ -1,13 +1,12 @@
 // $ mocha test/test.asyn.spec.js
 
-var assert = require('assert');
 var fs = require('fs');
 var muk = require('muk');
 var isConsole = false;
 // isConsole = true;
 
 /* start debug output */
-var debug = console.log;
+var debug = console.warn;
 if (!isConsole) {
   debug = function() {};
 }
@@ -30,15 +29,16 @@ describe.skip('Set time out', function() {
     setTimeout(done, 1990);
   });
   it('asyn test', function(done) {
-    function done2 () {
-      debug('done2')
-      setTimeout(done, 980);
-    }
     setTimeout(done, 1000);
+    // function done2 () {
+    //   debug('done2')
+    //   setTimeout(done, 980);
+    // }
     // setTimeout(done2, 4000);
     // $ mocha test/test.asyn.spec.js -t 5000
   });
 
+  // var assert = require('assert');
   // it('asyn test2', function() {
   //   assert.throws(
   //     function() {
@@ -62,7 +62,7 @@ describe('Read File, mock', function() {
 
     muk(fs, 'readFile', function(path, encoding, callback) {
       process.nextTick(function () {
-        callback(new Error("mock readFile error"));
+        callback(new Error('mock readFile error'));
       });
     });
     debug('check fs.readFile isMocked', muk.isMocked(fs, 'readFile'));
@@ -71,6 +71,7 @@ describe('Read File, mock', function() {
   it('should read file error', function(done) {
     fs.readFile('src/index.js', 'utf-8', function (err, data) {
       debug('err info', err);
+      debug('data output', data);
       if ((err instanceof Error) && /mock readFile error/.test(err)) {
         done();
       }

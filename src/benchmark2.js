@@ -7,7 +7,7 @@ var suite = new Benchmark.Suite();
 var arr = [0, 1, 2, 3, 5, 6];
 
 function callback(item) {
-    return item;
+  return item;
 }
 
 suite.add('nativeMap', function() {
@@ -19,10 +19,10 @@ suite.add('nativeMap', function() {
   }
   return ret;
 }).on('cycle', function(event) {
-  console.log(String(event.target));
+  console.warn(String(event.target));
 }).on('complete', function() {
-  console.log('Fastest is ' + this.filter('fastest').map('name'));
-  // console.log('Faster is ' + JSON.stringify(this.filter('fastest')));
+  console.warn('Fastest is ' + this.filter('fastest').map('name'));
+  // console.warn('Faster is ' + JSON.stringify(this.filter('fastest')));
 }).run();
 
 

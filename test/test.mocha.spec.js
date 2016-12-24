@@ -21,34 +21,34 @@ describe('User', function() {
 
 beforeEach(function() {
   // runs before each test in this block
-  console.log('===== all beforeEach 影响全局 =====');
+  console.warn('===== all beforeEach 影响全局 =====');
 });
 
 afterEach(function() {
   // runs before each test in this block
-  console.log('===== all afterEach 影响全局 =====');
+  console.warn('===== all afterEach 影响全局 =====');
 });
 
 describe('hooks', function() {
 
   before(function() {
     // runs before all tests in this block
-    console.log('before');
+    console.warn('before');
   });
 
   after(function() {
     // runs after all tests in this block
-    console.log('after');
+    console.warn('after');
   });
 
   beforeEach(function() {
     // runs before each test in this block
-    console.log('beforeEach');
+    console.warn('beforeEach');
   });
 
   afterEach(function() {
     // runs after each test in this block
-    console.log('afterEach');
+    console.warn('afterEach');
   });
 
   // test cases

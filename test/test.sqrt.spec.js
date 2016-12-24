@@ -6,13 +6,13 @@ var My = src.My;
 // var My = require('../src/sqrt.js');
 // var sim = require('../src/simple.js')
 
-describe("assert sqrt", function() {
+describe('assert sqrt', function() {
 
-  it("4的平方根应该等于", function() {
+  it('4的平方根应该等于', function() {
     assert.equal(My.sqrt(4), 2);
   });
 
-  it("参数为负值时应该报错", function() {
+  it('参数为负值时应该报错', function() {
     assert.doesNotThrow(
       function() {
         My.sqrt(3);
