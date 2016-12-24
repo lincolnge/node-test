@@ -45,11 +45,12 @@ travis
 ab Test
 ----
 
-  # 说明百度做了防 ab test 的策略
+  # 说明百度做了防 ab test 的策略，百度可能是限制了总请求数
   $ ab -k -c 2 -n 5 http://www.baidu.com/
 
   # 猫眼是没有防护的。
-  $ ab -k -c 800 -n 10000 http://www.maoyan.com/
+  # 其中 -n10000 表示总请求数 -c800 表示并发用户数为10
+  $ ab -k -c800 -n10000 http://www.maoyan.com/
 
 References
 ----
