@@ -14,6 +14,10 @@
 
   $ node test-assert.js
 
+mocha 是一个测试框架，本身不参与测试。它主要是用来管理测试用例和生成测试报告。
+
+describe(describe*)it
+
 友好的测试框架
 
 - 测试驱动开发（TDD）
@@ -49,8 +53,9 @@ ab Test
   $ ab -k -c 2 -n 5 http://www.baidu.com/
 
   # 猫眼是没有防护的。
-  # 其中 -n10000 表示总请求数 -c800 表示并发用户数为10
-  $ ab -k -c800 -n10000 http://www.maoyan.com/
+  # 其中 -n10000 表示总请求数 -c800 表示并发用户数为 800
+  $ ab -k -c80 -n1000 http://www.maoyan.com/
+  $ ab -k -c80 -n1000 http://m.maoyan.com/
 
 References
 ----
